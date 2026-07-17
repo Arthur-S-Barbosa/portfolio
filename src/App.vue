@@ -10,8 +10,7 @@ import ProjectsSection from './components/ProjectsSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import TheFooter from './components/TheFooter.vue'
 
-// troque pelo seu usuário do GitHub para a seção de projetos
-const GITHUB_USERNAME = 'arthsbarbosa'
+const GITHUB_USERNAME = 'arthur-s-barbosa'
 
 const { data: profile } = useProfile()
 const { data: skills } = useTable('skills', 'skills')
