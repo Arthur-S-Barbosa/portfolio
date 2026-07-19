@@ -104,7 +104,6 @@ create policy "public read languages" on languages for
 select
   using (true);
 
--- Seed com os dados do currículo
 insert into
   profile (
     name,
@@ -123,7 +122,7 @@ values
     'arthsbarbosa@gmail.com',
     'https://www.linkedin.com/in/arthur-dos-santos-barbosa-8994a0215/',
     'https://github.com/Arthur-S-Barbosa',
-    'Profissional com formação em Análise e Desenvolvimento de Sistemas e 3 anos de experiência na área. Perfil dinâmico e proativo, com disposição para o trabalho em equipe e o aprendizado constante.'
+    'Profissional com formação em Análise e Desenvolvimento de Sistemas. Perfil dinâmico e proativo, com disposição para o trabalho em equipe e o aprendizado constante.'
   );
 
 insert into
