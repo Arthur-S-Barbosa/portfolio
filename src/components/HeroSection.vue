@@ -132,9 +132,30 @@ defineProps({ profile: Object });
   .hero {
     grid-template-columns: 1fr;
     padding-top: 40px;
+    gap: 36px;
   }
   .editor {
     transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 32px 0 56px;
+  }
+  .cta-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cta-row .btn {
+    justify-content: center;
+  }
+  .editor-body {
+    padding: 16px;
+  }
+  .editor-body pre {
+    font-size: 12px;
+    line-height: 1.7;
   }
 }
 </style>

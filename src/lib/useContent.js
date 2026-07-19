@@ -2,12 +2,6 @@ import { ref, onMounted } from 'vue'
 import { supabase, isSupabaseConfigured } from './supabase'
 import * as fallback from '../data/fallbackData'
 
-/**
- * Busca uma tabela do Supabase (ordenada por "order_index" se existir).
- * Se o Supabase não estiver configurado, ou a tabela ainda estiver vazia,
- * usa os dados estáticos de fallbackData.js — assim você pode publicar o
- * site antes mesmo de configurar o banco de dados.
- */
 export function useTable(tableName, fallbackKey, orderColumn = 'order_index') {
   const data = ref(fallback[fallbackKey] || [])
   const loading = ref(isSupabaseConfigured)

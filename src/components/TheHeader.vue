@@ -36,6 +36,7 @@ const links = [
   align-items: center;
   justify-content: space-between;
   height: 56px;
+  gap: 12px;
 }
 .logo {
   font-family: var(--mono);
@@ -49,6 +50,11 @@ const links = [
   display: flex;
   gap: 4px;
   overflow-x: auto;
+  scrollbar-width: none;
+  min-width: 0;
+}
+.tabs::-webkit-scrollbar {
+  display: none;
 }
 .tab {
   font-family: var(--mono);
@@ -58,14 +64,34 @@ const links = [
   padding: 6px 10px;
   border-radius: 6px;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 .tab:hover {
   color: var(--ink);
   background: var(--paper-dim);
 }
 @media (max-width: 640px) {
+  .bar {
+    gap: 12px;
+  }
+  .logo {
+    flex-shrink: 0;
+  }
   .tabs {
-    display: none;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 12px,
+      black 90%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 12px,
+      black 90%,
+      transparent
+    );
   }
 }
 </style>

@@ -14,6 +14,8 @@ const year = new Date().getFullYear();
   padding: 28px 24px 40px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
   font-family: var(--mono);
   font-size: 12px;
   color: var(--muted);
