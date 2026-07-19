@@ -9,11 +9,31 @@
   --accent-ink: #0f2fbf;
   --signal: #00b37e; /* verde-sinal — design/UX */
   --signal-soft: #e3f8f0;
+  --signal-ink: #0a7a57;
   --accent-soft: #e7ecff;
+  --card-bg: #ffffff;
+  --header-bg: rgba(243, 245, 247, 0.85);
   --radius: 10px;
   --mono: "JetBrains Mono", ui-monospace, monospace;
   --display: "Space Grotesk", "Inter", sans-serif;
   --body: "Inter", sans-serif;
+}
+
+[data-theme="dark"] {
+  --paper: #0f1216;
+  --paper-dim: #1a1e24;
+  --ink: #eceef1;
+  --ink-soft: #b7bcc5;
+  --muted: #7b8290;
+  --line: #262b33;
+  --accent: #6e93ff;
+  --accent-ink: #a9c1ff;
+  --signal: #33e3aa;
+  --signal-soft: #12362c;
+  --signal-ink: #6fe3be;
+  --accent-soft: #1b2340;
+  --card-bg: #171a20;
+  --header-bg: rgba(15, 18, 22, 0.85);
 }
 
 * {
@@ -41,6 +61,9 @@ body {
   font-family: var(--body);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 a {
@@ -103,9 +126,12 @@ a {
 }
 
 .card {
-  background: #fff;
+  background: var(--card-bg);
   border: 1px solid var(--line);
   border-radius: var(--radius);
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .tag {
@@ -150,7 +176,7 @@ a {
   border: 1px solid var(--line);
 }
 .btn-ghost:hover {
-  background: #fff;
+  background: var(--card-bg);
   border-color: var(--ink);
 }
 

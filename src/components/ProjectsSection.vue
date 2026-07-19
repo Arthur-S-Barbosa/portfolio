@@ -145,7 +145,7 @@ onMounted(async () => {
 .lang-tag {
   background: var(--signal-soft);
   border-color: transparent;
-  color: #0a7a57;
+  color: var(--signal-ink);
 }
 
 @media (max-width: 800px) {
