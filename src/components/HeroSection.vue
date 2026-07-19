@@ -39,7 +39,8 @@ defineProps({ profile: Object });
 
 <style scoped>
 .hero {
-  padding: 72px 0 96px;
+  padding-top: 72px;
+  padding-bottom: 96px;
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   gap: 56px;
@@ -141,7 +142,8 @@ defineProps({ profile: Object });
 
 @media (max-width: 480px) {
   .hero {
-    padding: 32px 0 56px;
+    padding-top: 32px;
+    padding-bottom: 56px;
   }
   .cta-row {
     flex-direction: column;
