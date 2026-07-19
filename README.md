@@ -5,13 +5,6 @@ formação etc.) armazenado no **Supabase** e editável direto pelo painel do
 Supabase — sem precisar mexer em código para adicionar ou remover informações.
 Projetos são puxados automaticamente da **API pública do GitHub**.
 
-> ⚠️ **Sobre o Laravel**: o GitHub Pages só serve arquivos estáticos (HTML/CSS/JS)
-> — ele não executa PHP. Por isso este projeto **não usa Laravel**: o Supabase
-> substitui a função que o Laravel + banco de dados teriam (guardar e servir
-> os dados do currículo), sem precisar de um servidor PHP rodando em algum
-> lugar. Veja a seção "Por que não Laravel" no final deste arquivo se quiser
-> entender as alternativas.
-
 ## 1. Rodar localmente
 
 ```bash
