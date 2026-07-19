@@ -1,5 +1,5 @@
 <script setup>
-defineProps({ profile: Object })
+defineProps({ profile: Object });
 </script>
 
 <template>
@@ -17,9 +17,9 @@ defineProps({ profile: Object })
 
     <div class="editor" aria-hidden="true">
       <div class="editor-topbar">
-        <span class="editor-dot" style="background:#FF5F57"></span>
-        <span class="editor-dot" style="background:#FEBC2E"></span>
-        <span class="editor-dot" style="background:#28C840"></span>
+        <span class="editor-dot" style="background: #ff5f57"></span>
+        <span class="editor-dot" style="background: #febc2e"></span>
+        <span class="editor-dot" style="background: #28c840"></span>
         <span class="editor-file">profile.tsx</span>
       </div>
       <div class="editor-body">
@@ -65,12 +65,20 @@ defineProps({ profile: Object })
   line-height: 1.6;
   max-width: 52ch;
 }
-.cta-row { display: flex; gap: 12px; margin-top: 28px; }
-.arrow { transition: transform 0.15s ease; }
-.btn:hover .arrow { transform: translateX(3px); }
+.cta-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+}
+.arrow {
+  transition: transform 0.15s ease;
+}
+.btn:hover .arrow {
+  transform: translateX(3px);
+}
 
 .editor {
-  background: #12141B;
+  background: #12141b;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 20px 50px -20px rgba(20, 23, 31, 0.35);
@@ -81,33 +89,52 @@ defineProps({ profile: Object })
   align-items: center;
   gap: 7px;
   padding: 12px 14px;
-  background: #1B1E27;
-  border-bottom: 1px solid #2A2E3A;
+  background: #1b1e27;
+  border-bottom: 1px solid #2a2e3a;
 }
-.editor-dot { width: 10px; height: 10px; border-radius: 50%; }
+.editor-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
 .editor-file {
   margin-left: 10px;
   font-family: var(--mono);
   font-size: 12px;
-  color: #8A90A0;
+  color: #8a90a0;
 }
-.editor-body { padding: 22px; }
+.editor-body {
+  padding: 22px;
+}
 .editor-body pre {
   margin: 0;
   font-family: var(--mono);
   font-size: 13.5px;
   line-height: 1.8;
-  color: #C8CDD8;
+  color: #c8cdd8;
   white-space: pre-wrap;
   word-break: break-word;
 }
-.c-kw { color: #7EA2FF; }
-.c-var { color: #E8B96A; }
-.c-key { color: #9FD4C0; }
-.c-str { color: #F2A6A0; }
+.c-kw {
+  color: #7ea2ff;
+}
+.c-var {
+  color: #e8b96a;
+}
+.c-key {
+  color: #9fd4c0;
+}
+.c-str {
+  color: #f2a6a0;
+}
 
 @media (max-width: 860px) {
-  .hero { grid-template-columns: 1fr; padding-top: 40px; }
-  .editor { transform: none; }
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 40px;
+  }
+  .editor {
+    transform: none;
+  }
 }
 </style>

@@ -1,12 +1,12 @@
 <script setup>
 const links = [
-  { id: 'sobre', label: 'about.tsx' },
-  { id: 'skills', label: 'skills.json' },
-  { id: 'experiencia', label: 'experience.log' },
-  { id: 'formacao', label: 'education.md' },
-  { id: 'projetos', label: 'projects.gh' },
-  { id: 'contato', label: 'contact.sh' },
-]
+  { id: "sobre", label: "about.tsx" },
+  { id: "skills", label: "skills.json" },
+  { id: "experiencia", label: "experience.log" },
+  { id: "formacao", label: "education.md" },
+  { id: "projetos", label: "projects.gh" },
+  { id: "contato", label: "contact.sh" },
+];
 </script>
 
 <template>
@@ -14,7 +14,9 @@ const links = [
     <div class="container bar">
       <span class="logo">arthur<span class="dot">.</span>dev</span>
       <nav class="tabs">
-        <a v-for="l in links" :key="l.id" :href="`#${l.id}`" class="tab">{{ l.label }}</a>
+        <a v-for="l in links" :key="l.id" :href="`#${l.id}`" class="tab">{{
+          l.label
+        }}</a>
       </nav>
     </div>
   </header>
@@ -40,7 +42,9 @@ const links = [
   font-weight: 500;
   font-size: 14px;
 }
-.dot { color: var(--accent); }
+.dot {
+  color: var(--accent);
+}
 .tabs {
   display: flex;
   gap: 4px;
@@ -55,8 +59,13 @@ const links = [
   border-radius: 6px;
   white-space: nowrap;
 }
-.tab:hover { color: var(--ink); background: var(--paper-dim); }
+.tab:hover {
+  color: var(--ink);
+  background: var(--paper-dim);
+}
 @media (max-width: 640px) {
-  .tabs { display: none; }
+  .tabs {
+    display: none;
+  }
 }
 </style>

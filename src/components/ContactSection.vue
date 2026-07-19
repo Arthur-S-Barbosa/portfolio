@@ -1,5 +1,5 @@
 <script setup>
-defineProps({ profile: Object })
+defineProps({ profile: Object });
 </script>
 
 <template>
@@ -9,16 +9,41 @@ defineProps({ profile: Object })
     <p class="section-sub">Aberto a oportunidades de Full Stack e UI/UX.</p>
 
     <div class="links">
-      <a class="btn" :href="`mailto:${profile.email}`">email<span class="arrow">→</span></a>
-      <a class="btn btn-ghost" :href="profile.linkedin" target="_blank" rel="noopener">linkedin</a>
-      <a class="btn btn-ghost" :href="profile.github" target="_blank" rel="noopener">github</a>
+      <a class="btn" :href="`mailto:${profile.email}`"
+        >email<span class="arrow">→</span></a
+      >
+      <a
+        class="btn btn-ghost"
+        :href="profile.linkedin"
+        target="_blank"
+        rel="noopener"
+        >linkedin</a
+      >
+      <a
+        class="btn btn-ghost"
+        :href="profile.github"
+        target="_blank"
+        rel="noopener"
+        >github</a
+      >
     </div>
   </section>
 </template>
 
 <style scoped>
-.contact { text-align: left; }
-.links { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
-.arrow { transition: transform 0.15s ease; }
-.btn:hover .arrow { transform: translateX(3px); }
+.contact {
+  text-align: left;
+}
+.links {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+.arrow {
+  transition: transform 0.15s ease;
+}
+.btn:hover .arrow {
+  transform: translateX(3px);
+}
 </style>

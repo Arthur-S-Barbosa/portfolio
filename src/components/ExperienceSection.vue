@@ -1,5 +1,5 @@
 <script setup>
-defineProps({ experience: Array })
+defineProps({ experience: Array });
 </script>
 
 <template>
@@ -31,15 +31,66 @@ defineProps({ experience: Array })
 </template>
 
 <style scoped>
-.timeline { display: flex; flex-direction: column; }
-.entry { display: grid; grid-template-columns: 24px 1fr; gap: 20px; }
-.entry-rail { display: flex; flex-direction: column; align-items: center; }
-.entry-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); margin-top: 26px; flex-shrink: 0; }
-.entry-line { flex: 1; width: 1px; background: var(--line); margin: 4px 0; }
-.entry-body { padding: 22px 24px; margin-bottom: 22px; }
-.entry-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
-.entry-top h3 { font-family: var(--display); font-size: 18px; margin: 0; }
-.period { font-family: var(--mono); font-size: 12px; color: var(--muted); white-space: nowrap; }
-.company { color: var(--accent-ink); font-size: 13.5px; margin: 4px 0 12px; }
-ul { margin: 0; padding-left: 18px; color: var(--ink-soft); font-size: 14px; line-height: 1.7; }
+.timeline {
+  display: flex;
+  flex-direction: column;
+}
+.entry {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 20px;
+}
+.entry-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.entry-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-top: 26px;
+  flex-shrink: 0;
+}
+.entry-line {
+  flex: 1;
+  width: 1px;
+  background: var(--line);
+  margin: 4px 0;
+}
+.entry-body {
+  padding: 22px 24px;
+  margin-bottom: 22px;
+}
+.entry-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.entry-top h3 {
+  font-family: var(--display);
+  font-size: 18px;
+  margin: 0;
+}
+.period {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.company {
+  color: var(--accent-ink);
+  font-size: 13.5px;
+  margin: 4px 0 12px;
+}
+ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.7;
+}
 </style>
