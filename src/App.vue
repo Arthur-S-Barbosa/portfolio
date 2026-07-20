@@ -12,7 +12,7 @@ import TheFooter from "./components/TheFooter.vue";
 
 const GITHUB_USERNAME = "Arthur-S-Barbosa";
 
-const { data: profile } = useProfile();
+const { data: profile, loading: profileLoading } = useProfile();
 const { data: skills } = useTable("skills", "skills");
 const { data: competencies } = useTable("competencies", "competencies");
 const { data: experience } = useTable("experience", "experience");
@@ -25,7 +25,11 @@ const { data: languages } = useTable("languages", "languages");
   <TheHeader />
   <main>
     <HeroSection :profile="profile" />
-    <AboutSection :profile="profile" :languages="languages" />
+    <AboutSection
+      :profile="profile"
+      :loading="profileLoading"
+      :languages="languages"
+    />
     <SkillsSection :skills="skills" :competencies="competencies" />
     <ExperienceSection :experience="experience" />
     <EducationSection :education="education" :courses="courses" />

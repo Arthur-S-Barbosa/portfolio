@@ -1,14 +1,22 @@
 <script setup>
-defineProps({ profile: Object, languages: Array });
+import { ref } from "vue";
+
+defineProps({ profile: Object, languages: Array, loading: Boolean });
+
+const imgLoaded = ref(false);
 </script>
 
 <template>
   <section id="sobre" class="section container about">
     <div class="photo-frame">
+      <div v-if="loading" class="photo-skeleton"></div>
       <img
-        v-if="profile.photo_url"
+        v-else-if="profile.photo_url"
         :src="profile.photo_url"
         alt="Foto de Arthur Barbosa"
+        class="photo-img"
+        :class="{ loaded: imgLoaded }"
+        @load="imgLoaded = true"
       />
       <div v-else class="photo-placeholder">
         <span>foto.jpg</span>
@@ -55,6 +63,35 @@ defineProps({ profile: Object, languages: Array });
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.photo-skeleton {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    100deg,
+    var(--paper-dim) 30%,
+    var(--line) 50%,
+    var(--paper-dim) 70%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.photo-img {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.photo-img.loaded {
+  opacity: 1;
 }
 .photo-placeholder {
   height: 100%;
