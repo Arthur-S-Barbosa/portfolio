@@ -1,6 +1,9 @@
 <script setup>
+import { useI18n } from "vue-i18n";
 import { useTheme } from "../lib/useTheme";
+import { SUPPORTED_LOCALES, setLocale } from "../i18n";
 
+const { t, locale } = useI18n();
 const { theme, toggleTheme } = useTheme();
 
 const links = [
@@ -22,13 +25,23 @@ const links = [
           l.label
         }}</a>
       </nav>
+
+      <select
+        class="lang-select"
+        :value="locale"
+        @change="setLocale($event.target.value)"
+        aria-label="Idioma / Language / Idioma"
+      >
+        <option v-for="l in SUPPORTED_LOCALES" :key="l.code" :value="l.code">
+          {{ l.code.toUpperCase() }}
+        </option>
+      </select>
+
       <button
         class="theme-toggle"
         type="button"
         @click="toggleTheme"
-        :aria-label="
-          theme === 'dark' ? 'Ativar modo claro' : 'Ativar modo escuro'
-        "
+        :aria-label="theme === 'dark' ? t('theme.toLight') : t('theme.toDark')"
       >
         <svg
           v-if="theme === 'dark'"
@@ -120,6 +133,22 @@ const links = [
 .tab:hover {
   color: var(--ink);
   background: var(--paper-dim);
+}
+
+.lang-select {
+  flex-shrink: 0;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-soft);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 6px 8px;
+  cursor: pointer;
+}
+.lang-select:hover {
+  border-color: var(--ink);
+  color: var(--ink);
 }
 
 .theme-toggle {

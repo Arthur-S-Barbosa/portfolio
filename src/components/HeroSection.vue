@@ -5,13 +5,15 @@ defineProps({ profile: Object });
 <template>
   <section class="hero container">
     <div class="hero-text">
-      <span class="eyebrow">● disponível para novos projetos</span>
+      <span class="eyebrow">● {{ $t("hero.availability") }}</span>
       <h1 class="name">{{ profile.name }}</h1>
       <p class="role">{{ profile.role }}</p>
       <p class="summary">{{ profile.summary }}</p>
       <div class="cta-row">
-        <a href="#contato" class="btn">contato()<span class="arrow">→</span></a>
-        <a href="#projetos" class="btn btn-ghost">ver projetos</a>
+        <a href="#contato" class="btn"
+          >{{ $t("hero.contact") }}<span class="arrow">→</span></a
+        >
+        <a href="#projetos" class="btn btn-ghost">{{ $t("hero.projects") }}</a>
       </div>
     </div>
 

@@ -29,10 +29,10 @@ onMounted(async () => {
   <section id="projetos" class="section container">
     <div class="section-head row">
       <div>
-        <span class="eyebrow">05 · projects.gh</span>
-        <h2 class="section-title">Projetos no GitHub</h2>
+        <span class="eyebrow">{{ $t("projects.eyebrow") }}</span>
+        <h2 class="section-title">{{ $t("projects.title") }}</h2>
         <p class="section-sub">
-          Puxados automaticamente do meu perfil —
+          {{ $t("projects.subtitlePrefix") }}
           <a
             :href="`https://github.com/${githubUsername}`"
             target="_blank"
@@ -44,19 +44,19 @@ onMounted(async () => {
     </div>
 
     <div v-if="status === 'loading'" class="state">
-      carregando repositórios…
+      {{ $t("projects.loading") }}
     </div>
     <div v-else-if="status === 'error'" class="state">
-      não foi possível carregar os repositórios agora. veja diretamente no
+      {{ $t("projects.error") }}
       <a
         :href="`https://github.com/${githubUsername}`"
         target="_blank"
         rel="noopener"
-        >GitHub</a
+        >{{ $t("projects.errorLink") }}</a
       >.
     </div>
     <div v-else-if="status === 'empty'" class="state">
-      configure seu usuário do GitHub em <code>src/App.vue</code> (prop
+      {{ $t("projects.empty") }} <code>src/App.vue</code> (prop
       <code>githubUsername</code>).
     </div>
 
@@ -73,7 +73,9 @@ onMounted(async () => {
           <span class="repo-name">{{ r.name }}</span>
           <span class="repo-star">★ {{ r.stargazers_count }}</span>
         </div>
-        <p class="repo-desc">{{ r.description || "sem descrição" }}</p>
+        <p class="repo-desc">
+          {{ r.description || $t("projects.noDescription") }}
+        </p>
         <span v-if="r.language" class="tag lang-tag">{{ r.language }}</span>
       </a>
     </div>
