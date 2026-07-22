@@ -5,8 +5,8 @@ defineProps({ education: Array, courses: Array });
 <template>
   <section id="formacao" class="section container">
     <div class="section-head">
-      <span class="eyebrow">04 · education.md</span>
-      <h2 class="section-title">Formação e cursos</h2>
+      <span class="eyebrow">{{ $t("education.eyebrow") }}</span>
+      <h2 class="section-title">{{ $t("education.title") }}</h2>
     </div>
 
     <div class="edu-grid">
@@ -19,7 +19,7 @@ defineProps({ education: Array, courses: Array });
     </div>
 
     <div class="courses">
-      <span class="block-label">cursos complementares</span>
+      <span class="block-label">{{ $t("education.courses") }}</span>
       <div class="course-chips">
         <span class="tag" v-for="c in courses" :key="c.name"
           >{{ c.name }} — {{ c.provider }}</span

@@ -5,8 +5,8 @@ defineProps({ experience: Array });
 <template>
   <section id="experiencia" class="section container">
     <div class="section-head">
-      <span class="eyebrow">03 · experience.log</span>
-      <h2 class="section-title">Experiência profissional</h2>
+      <span class="eyebrow">{{ $t("experience.eyebrow") }}</span>
+      <h2 class="section-title">{{ $t("experience.title") }}</h2>
     </div>
 
     <div class="timeline">

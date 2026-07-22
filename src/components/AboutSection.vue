@@ -19,14 +19,14 @@ const imgLoaded = ref(false);
         @load="imgLoaded = true"
       />
       <div v-else class="photo-placeholder">
-        <span>foto.jpg</span>
-        <small>adicione sua foto em /public/photo.jpg</small>
+        <span>{{ $t("about.photoFile") }}</span>
+        <small>{{ $t("about.photoHint") }}</small>
       </div>
     </div>
 
     <div class="about-body">
-      <span class="eyebrow">01 · sobre</span>
-      <h2 class="section-title">Quem constrói o que você está vendo</h2>
+      <span class="eyebrow">{{ $t("about.eyebrow") }}</span>
+      <h2 class="section-title">{{ $t("about.title") }}</h2>
       <p class="lead">{{ profile.summary }}</p>
 
       <div class="lang-grid">

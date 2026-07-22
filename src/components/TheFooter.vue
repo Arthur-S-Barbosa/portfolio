@@ -5,7 +5,7 @@ const year = new Date().getFullYear();
 <template>
   <footer class="footer container">
     <span>© {{ year }} Arthur Barbosa</span>
-    <span class="built">feito com Vue + Supabase</span>
+    <span class="built">{{ $t("footer.builtWith") }}</span>
   </footer>
 </template>
 

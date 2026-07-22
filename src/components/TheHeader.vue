@@ -1,6 +1,9 @@
 <script setup>
+import { useI18n } from "vue-i18n";
 import { useTheme } from "../lib/useTheme";
+import LanguageSwitcher from "./LanguageSwitcher.vue";
 
+const { t, locale } = useI18n();
 const { theme, toggleTheme } = useTheme();
 
 const links = [
@@ -22,13 +25,14 @@ const links = [
           l.label
         }}</a>
       </nav>
+
+      <LanguageSwitcher :locale="locale" />
+
       <button
         class="theme-toggle"
         type="button"
         @click="toggleTheme"
-        :aria-label="
-          theme === 'dark' ? 'Ativar modo claro' : 'Ativar modo escuro'
-        "
+        :aria-label="theme === 'dark' ? t('theme.toLight') : t('theme.toDark')"
       >
         <svg
           v-if="theme === 'dark'"
