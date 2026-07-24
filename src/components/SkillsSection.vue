@@ -1,5 +1,8 @@
 <script setup>
+import { useLocalizedField } from "../lib/localize";
+
 defineProps({ skills: Array, competencies: Array });
+const { tr } = useLocalizedField();
 </script>
 
 <template>
@@ -23,7 +26,7 @@ defineProps({ skills: Array, competencies: Array });
         <span class="block-label">{{ $t("skills.competencies") }}</span>
         <ul class="comp-list">
           <li v-for="c in competencies" :key="c.id || c.name">
-            <span class="check">✓</span>{{ c.name }}
+            <span class="check">✓</span>{{ tr(c, "name") }}
           </li>
         </ul>
       </div>

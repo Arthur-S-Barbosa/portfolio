@@ -1,5 +1,8 @@
 <script setup>
+import { useLocalizedField } from "../lib/localize";
+
 defineProps({ experience: Array });
+const { tr } = useLocalizedField();
 </script>
 
 <template>
@@ -17,12 +20,12 @@ defineProps({ experience: Array });
         </div>
         <div class="entry-body card">
           <div class="entry-top">
-            <h3>{{ job.role }}</h3>
+            <h3>{{ tr(job, "role") }}</h3>
             <span class="period">{{ job.period }}</span>
           </div>
           <p class="company">{{ job.company }}</p>
           <ul>
-            <li v-for="(b, bi) in job.bullets" :key="bi">{{ b }}</li>
+            <li v-for="(b, bi) in tr(job, 'bullets')" :key="bi">{{ b }}</li>
           </ul>
         </div>
       </article>

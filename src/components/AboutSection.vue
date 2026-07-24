@@ -1,9 +1,11 @@
 <script setup>
 import { ref } from "vue";
+import { useLocalizedField } from "../lib/localize";
 
 defineProps({ profile: Object, languages: Array, loading: Boolean });
 
 const imgLoaded = ref(false);
+const { tr } = useLocalizedField();
 </script>
 
 <template>
@@ -27,13 +29,13 @@ const imgLoaded = ref(false);
     <div class="about-body">
       <span class="eyebrow">{{ $t("about.eyebrow") }}</span>
       <h2 class="section-title">{{ $t("about.title") }}</h2>
-      <p class="lead">{{ profile.summary }}</p>
+      <p class="lead">{{ tr(profile, "summary") }}</p>
 
       <div class="lang-grid">
         <div v-for="l in languages" :key="l.name" class="lang">
           <div class="lang-top">
-            <span>{{ l.name }}</span>
-            <span class="lang-level">{{ l.level }}</span>
+            <span>{{ tr(l, "name") }}</span>
+            <span class="lang-level">{{ tr(l, "level") }}</span>
           </div>
           <div class="lang-bar">
             <div class="lang-fill" :style="{ width: l.value + '%' }"></div>
