@@ -1,5 +1,8 @@
 <script setup>
+import { useLocalizedField } from "../lib/localize";
+
 defineProps({ education: Array, courses: Array });
+const { tr } = useLocalizedField();
 </script>
 
 <template>
@@ -12,9 +15,9 @@ defineProps({ education: Array, courses: Array });
     <div class="edu-grid">
       <div class="card edu-card" v-for="(e, i) in education" :key="i">
         <span class="period">{{ e.period }}</span>
-        <h3>{{ e.title }}</h3>
+        <h3>{{ tr(e, "title") }}</h3>
         <p class="institution">{{ e.institution }}</p>
-        <p class="detail">{{ e.detail }}</p>
+        <p class="detail">{{ tr(e, "detail") }}</p>
       </div>
     </div>
 
